@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="com.mjava.ssm.mapper.CategoryMapper">
+ 	<select id="listCategory" resultType="Category">
+ 		select * from category_ 		
+ 	</select>
+ 	
+ 	<insert id="addCategory" parameterType="Category">
+ 		insert into category_ (name) values (#{name})
+ 	</insert>
+ 	
+ 	<update id="updateCategory" parameterType="Category">
+ 		update category_ set name = #{name} where id=#{id}
+ 	</update>
+ 	
+ 	<delete id="deleteCategory" parameterType="int">
+ 		delete from category_ where id=#{id}
+ 	</delete>
+ 	
+ 	<select id="getCategory" parameterType="int" resultType="Category">
+ 		select * from category_ where id=#{id}
+ 	</select>
+ 
+ 
+ </mapper>
